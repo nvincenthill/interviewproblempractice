@@ -1,4 +1,4 @@
-let students = [
+const students = [
   "Mac087",
   // "amarine7882",
   "AndySiamas",
@@ -9,10 +9,10 @@ let students = [
   // "davydhong",
   "ivan-hui",
   "jgarciabengochea",
-  "jerrywu28",
+  // "jerrywu28",
   "jeongle",
   "enigmatikme",
-  "kaycheez",
+  // "kaycheez",
   "lancl",
   // "Mjones13",
   "MattRodigheri",
@@ -23,8 +23,8 @@ let students = [
   "stajima",
   "iloveporkchop810",
   "tecostello",
-  "vikramraja1995",
-  "wissemgamra"
+  // "vikramraja1995",
+  // "wissemgamra"
   // "Yontaekc"
 ];
 
