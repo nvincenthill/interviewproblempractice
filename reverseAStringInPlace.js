@@ -1,12 +1,18 @@
 // Reverse the input array of characters in place
 function reverse(arrayOfChars) {
-  let last = arrayOfChars.length - 1;
-  for (let i = 0; i < last; i++) {
-    [arrayOfChars[i], arrayOfChars[last]] = [
-      arrayOfChars[last],
-      arrayOfChars[i]
+  let leftIndex = 0;
+  let rightIndex = arrayOfChars.length - 1;
+
+  while (leftIndex < rightIndex) {
+    // Swap characters
+    [arrayOfChars[leftIndex], arrayOfChars[rightIndex]] = [
+      arrayOfChars[rightIndex],
+      arrayOfChars[leftIndex]
     ];
-    last--;
+
+    // Move towards middle
+    leftIndex++;
+    rightIndex--;
   }
 }
 
