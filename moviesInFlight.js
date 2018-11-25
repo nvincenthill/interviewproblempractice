@@ -8,17 +8,18 @@
 // C - optimal runtime over space, users cannot watch the same movie twice
 // E - no movies, flight length === 0, etc.
 
-function canTwoMoviesFillFlight(movies, flightLength) {
-  if (flightLength === 0 || movies.length === 0) {
-    return false;
-  }
+function canTwoMoviesFillFlight(movieLengths, flightLength) {
+  const movieLengthsSeen = new Set();
 
-  for (let i = 0; i < movies.length; i++) {
-    for (let j = 0; j < movies.length; j++) {
-      if (movies[i] + movies[j] === flightLength && i !== j) {
-        return true;
-      }
+  for (let i = 0; i < movieLengths.length; i++) {
+    const firstMovieLength = movieLengths[i];
+
+    const matchingSecondMovieLength = flightLength - firstMovieLength;
+    if (movieLengthsSeen.has(matchingSecondMovieLength)) {
+      return true;
     }
+
+    movieLengthsSeen.add(firstMovieLength);
   }
 
   return false;
