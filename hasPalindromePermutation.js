@@ -1,26 +1,15 @@
-function hasPalindromePermutation(str) {
-  if (str === "" || str.length === 1) {
-    return true;
-  }
+function hasPalindromePermutation(theString) {
+  const unpairedCharacters = new Set();
 
-  const tally = str.split("").reduce((tally, char) => {
-    tally[char] = (tally[char] || 0) + 1;
-    return tally;
-  }, {});
-
-  let odds = 0;
-
-  for (let letter in tally) {
-    if (tally[letter] % 2 !== 0) {
-      odds += 1;
+  for (let char of theString) {
+    if (unpairedCharacters.has(char)) {
+      unpairedCharacters.delete(char);
+    } else {
+      unpairedCharacters.add(char);
     }
   }
 
-  if (odds === 0 || odds === 1) {
-    return true;
-  } else {
-    return false;
-  }
+  return unpairedCharacters.size <= 1;
 }
 
 // Tests
