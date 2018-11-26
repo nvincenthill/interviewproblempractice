@@ -1,18 +1,18 @@
 function getMaxProfit(stockPrices) {
-  if (stockPrices.length === 0 || stockPrices.length === 1) {
+  if (stockPrices.length < 2) {
     throw "Error";
   }
 
-  let maxProfit = -Infinity;
+  let maxProfit = stockPrices[1] - stockPrices[0];
+  let minPrice = stockPrices[0];
 
-  for (let i = 0; i < stockPrices.length; i++) {
-    for (let j = 0; j < stockPrices.length; j++) {
-      let current = stockPrices[i] - stockPrices[j];
-      if (i !== j && maxProfit < current && i > j) {
-        maxProfit = current;
-      }
-    }
+  for (let i = 1; i < stockPrices.length; i++) {
+    const currentPrice = stockPrices[i];
+    const potentialProfit = currentPrice - minPrice;
+    maxProfit = Math.max(maxProfit, potentialProfit);
+    minPrice = Math.min(minPrice, currentPrice);
   }
+
   return maxProfit;
 }
 
