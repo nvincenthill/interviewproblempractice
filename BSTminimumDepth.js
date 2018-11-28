@@ -8,40 +8,20 @@
 
 var minDepth = function(root) {
   if (root === null) {
-    return null;
+    return 0;
   }
 
   if (root.left === null && root.right === null) {
     return 1;
   }
 
-  // BFS
-  let queue = [[root, 1]];
-  let result = null;
-
-  let BFS = function(node, depth) {
-    // base case
-    if (node.left === null && node.right === null) {
-      result = depth;
-      return;
-    }
-    // recursive case
-    if (node.left !== null) {
-      queue.push([node.left, depth + 1]);
-    }
-
-    if (node.right !== null) {
-      queue.push([node.right, depth + 1]);
-    }
-  };
-
-  while (queue.length > 0) {
-    BFS(queue[0][0], queue[0][1]);
-    queue.shift(queue[0]);
-    if (result !== null) {
-      return result;
-    }
+  if (!root.left) {
+    return minDepth(root.right) + 1;
   }
 
-  return result;
+  if (!root.right) {
+    return minDepth(root.left) + 1;
+  }
+
+  return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
 };
