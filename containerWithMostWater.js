@@ -2,6 +2,8 @@
 
 // brute force solution
 
+//TODO: Implement two pointer solution
+
 var maxArea = function(height) {
   if (height.length === 2) {
     return Math.min(height[0], height[1]);
