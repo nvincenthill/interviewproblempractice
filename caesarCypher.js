@@ -2,7 +2,7 @@ function caesarCipher(s, k) {
   let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
   let cyphered = "";
 
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i += 1) {
     let isUpperCase = s[i].toUpperCase() === s[i];
     if (alphabet.includes(s[i].toLowerCase())) {
       let originalIndex = alphabet.indexOf(s[i].toLowerCase());
