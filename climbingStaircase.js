@@ -10,13 +10,11 @@ function climbingStaircase(n, k) {
     results.push([]);
     return results;
   }
-
   const permute = (stepsLeft, sequenceSoFar) => {
     if (stepsLeft === 0) {
       results.push(sequenceSoFar);
       return;
     }
-
     for (let i = 0; i < k; i += 1) {
       permute(n - i, sequenceSoFar.push(i));
     }
