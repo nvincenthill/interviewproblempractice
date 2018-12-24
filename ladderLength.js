@@ -23,8 +23,8 @@
 
 const ladderLength = function(beginWord, endWord, wordList) {
   let minSteps = 0;
-  let queue = [beginWord];
-  let usedWords = {};
+  const queue = [beginWord];
+  const usedWords = {};
 
   if (beginWord.length !== endWord.length || !beginWord || !endWord) {
     return minSteps;
