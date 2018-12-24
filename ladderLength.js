@@ -69,5 +69,5 @@ const wordList = ["hot", "dot", "dog", "lot", "log", "cog"];
 console.log(
   ladderLength(beginWord, endWord, wordList) === 5
     ? "Test passed"
-    : "should return shortest path to end word"
+    : "Should return shortest path to end word"
 );
