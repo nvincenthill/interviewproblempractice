@@ -84,8 +84,8 @@ function equals(G, P, gridRowIndex, gridColIndex) {
   let pRow = P.length;
   let pCol = P[0].length;
 
-  for (let i = 0; i < pRow; i++) {
-    for (let j = 0; j < pCol; j++) {
+  for (let i = 0; i < pRow; i += 1) {
+    for (let j = 0; j < pCol; j += 1) {
       if (G[gridRowIndex + i][gridColIndex + j] !== P[i][j]) {
         return false;
       }
@@ -101,8 +101,8 @@ function gridSearch(G, P) {
 
   let pRow = P.length;
   let pCol = P[0].length;
-  for (let gri = 0; gri < gRow - pRow + 1; gri++) {
-    for (let gci = 0; gci < gCol - pCol + 1; gci++) {
+  for (let gri = 0; gri < gRow - pRow + 1; gri += 1) {
+    for (let gci = 0; gci < gCol - pCol + 1; gci += 1) {
       if (equals(G, P, gri, gci)) {
         return "YES";
       }
