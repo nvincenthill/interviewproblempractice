@@ -26,6 +26,27 @@
 // C - O(log(n)) time complexity
 // E - always increasing numbers?
 
-var findPeakElement = function(nums) {
-  // implement a binary search variant to find a potential peak
+const findPeakElement = function(nums) {
+  let left = 0;
+  let right = nums.length - 1;
+  let midpoint, before, after;
+
+  while (left <= right) {
+    midpoint = Math.floor((left + right) / 2);
+    before = midpoint - 1 >= 0 ? nums[midpoint - 1] : -Infinity;
+    after = midpoint + 1 < nums.length ? nums[midpoint + 1] : -Infinity;
+
+    if (before < nums[midpoint] && after < nums[midpoint]) {
+      return midpoint;
+    }
+
+    if (before > after) {
+      right = midpoint - 1;
+    } else {
+      left = midpoint + 1;
+    }
+  }
 };
+
+// tests
+console.log(findPeakElement([1, 6, 5, 4, 3, 2, 1])); // 1
