@@ -18,9 +18,7 @@ var kthSmallestPrimeFraction = function(A, K) {
   const results = [];
   for (let i = 0; i < A.length; i += 1) {
     for (let j = 0; j < A.length; j += 1) {
-      if (true) {
-        results.push([A[i], A[j]]);
-      }
+      results.push([A[i], A[j]]);
     }
   }
 
