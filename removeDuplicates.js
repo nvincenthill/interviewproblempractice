@@ -1,3 +1,5 @@
+// Given an array of strings, return a new array with all unique strings (all duplicates removed)
+
 function removeDuplicates(arr) {
   const uniques = new Set();
 
@@ -8,14 +10,6 @@ function removeDuplicates(arr) {
   return [...uniques];
 }
 
-// run your function through some test cases here
-// remember: debugging is half the battle!
-const testArr = [
-  [
-    "/tmp/parker_is_dumb.mpg",
-    "/home/parker/secret_puppy_dance.mpg",
-    "/home/trololol.mov",
-    "/etc/apache2/httpd.conf"
-  ]
-];
+const testArr = [['example1', 'example2', 'example3', 'example3']];
 console.log(removeDuplicates(testArr));
+// prints ['example1', 'example2', 'example3']
