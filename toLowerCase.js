@@ -16,6 +16,6 @@ const toLowerCase = str => {
 
 // Tests
 
-console.log(toLowerCase('Hello')); // hello
-console.log(toLowerCase('here')); // here
-console.log(toLowerCase('LOVELY')); // lovely
+// console.log(toLowerCase('Hello')); // hello
+// console.log(toLowerCase('here')); // here
+// console.log(toLowerCase('LOVELY')); // lovely
