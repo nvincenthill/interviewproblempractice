@@ -28,4 +28,4 @@ const findDuplicatedAndMissing = function(arr) {
 };
 
 // tests
-// console.log(findDuplicatedAndMissing([8, 7, 3, 5, 3, 6, 1, 4]));
+// console.log(findDuplicatedAndMissing([8, 7, 3, 5, 3, 6, 1, 4])); // [2,3]
